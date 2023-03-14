@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch 10 to 14 | Assignment 2</title>
+</head>
+<body>
+  
+  <script>
+    // Second Assignment - Make a Percentage Calculator
+    // Get the 5-course number from the userfor example course1 is 70 var totalMarks = 500
+    // Calculate the total percentage formula:  obtainedMarks * 100/ totalMarks
+    // print output in alert.
+  
+    let english = prompt("Please enter your obtained marks in english")
+    let maths = prompt("Please enter your obtained marks in maths")
+    let urdu = prompt("Please enter your obtained marks in urdu")
+    let science = prompt("Please enter your obtained marks in science")
+    let social_studies = prompt("Please enter your obtained marks in social studies")
+
+    let obtainedMarks = parseInt(english) + parseInt(maths) + parseInt(urdu) + parseInt(science) + parseInt(social_studies)
+    let totalMarks = 500
+
+    let percentage = (obtainedMarks * 100)/totalMarks
+
+    alert("Your total percentage is " + percentage + "%")
+  </script>
+</body>
+</html>
