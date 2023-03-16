@@ -25,17 +25,34 @@
     let course4 = prompt("Course 4", "Urdu")
     let course5 = prompt("Course 5", "Sociology")
     
-    console.log(course1)
-    console.log(course2)
-    console.log(course3)
-    console.log(course4)
-    console.log(course5)
     courses.push(course1, course2, course3, course4, course5)
 
     for(i=0; i<courses.length; i++) {
       console.log(courses[i])
     }
 
+    course1_new = prompt("Course No 1", course1)
+    course2_new = prompt("Course No 2", course2)
+    course3_new = prompt("Course No 3", course3)
+    course4_new = prompt("Course No 4", course4)
+    course5_new = prompt("Course No 5", course5)
+
+    if(course1_new !== course1) {
+      courses.splice(0,1,course1_new)
+    }
+    else if(course2_new !== course2) {
+      courses.splice(1,1,course2_new)
+    }
+    else if(course3_new !== course3) {
+      courses.splice(2,1,course3_new)
+    }
+    else if(course4_new !== course4) {
+      courses.splice(3,1,course2_new)
+    }
+    else if(course5_new !== course5) {
+      courses.splice(4,1,course5_new)
+    }
+    console.log("Here is updated array of courses " + courses)
   </script>
 </body>
 </html>
