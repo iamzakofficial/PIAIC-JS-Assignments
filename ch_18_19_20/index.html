@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 18, 19, 20</title>
+</head>
+<body>
+  
+  <script>
+    let defaultCourses= ['Computer',"Biology","Chemistry", "Urdu", "English"]
+    let courses = []
+    for(i=1; i<=5; i++) {
+      course = prompt(`Course ${i}`, defaultCourses[i-1])
+      courses.push(course)
+    }
+
+    for(i=0; i < courses.length; i++) {
+      newCourse = prompt(`Course No ${i+1}`, courses[i])
+      if(newCourse !== course[i]){
+        courses.splice(i,1, newCourse)
+      }
+    }
+   
+    alert("Your Courses has been updated \n" + courses);
+  </script>
+</body>
+</html>
