@@ -14,5 +14,26 @@
     Convert every first letter of the content in Capitalize case. inputValue="Cloud Native Computing"
     print value in console.log() console.log(inputValue) | check result in browser console 
    -->
+
+   <script>
+    var UserInput = prompt("Enter your course","cloud native computing");
+    
+    var CapsInput = "";
+
+    for(i=0;i<UserInput.length;i++) {
+      if(i==0 || UserInput[i-1] ==" ") {
+        CapsInput += UserInput[i].toUpperCase();
+      }
+      else{
+        CapsInput += UserInput[i].toLowerCase();
+      }
+    }
+
+    console.log(CapsInput)
+
+    
+
+
+   </script>
 </body>
 </html>

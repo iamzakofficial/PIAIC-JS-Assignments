@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 21 to 30 | Assignment 1</title>
+  <title>Chapter 20 to 30 | Assignment 1</title>
 </head>
 <body>
 
@@ -17,5 +17,24 @@
       print value in alert "shiT"
     -->
 
+    <script>
+
+      var userInput = prompt("Please enter a  nuber with decimal point", "3.4")
+      userInput = Math.ceil(userInput)
+      var _string = "This is a test text"
+      _string = _string.slice(0,userInput)
+      
+      var newStr = ""
+
+      for(i=_string.length-1; i>=0;i--) {
+        newStr += _string[i]
+      }
+      alert(newStr)
+
+
+
+
+      
+    </script>
 </body>
 </html>
