@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 31 to 34</title>
+</head>
+<body>
+  
+  <!-- Java-script assignments chapter 31 to 34
+
+  input your name through prompt. for example name is  "Ameen Alam"
+
+  input your DOB(date) through prompt. for example date is  "24"
+
+  input your DOB(month) through prompt. for example month is  "05"
+
+  input your DOB(year) through prompt. for example year is  "1999"
+
+  print meassage in console.log() "Hello Ameen Alam, Good Morning, AfterNoon, Evening or Night"
+
+  print meassage in console.log() "Your DOB is {in pakistan standard time format}"
+
+  print meassage in console.log() "You are 20 years 7 Month 10 Days 19 Hours 20 Minutes 25 Seconds old"
+
+  "Your Age in Days 7510"
+
+  print meassage in console.log() "How much time left in your next birthday? 161 days 4 hours 39 minutes 34 seconds" or "happy Birth Day Ameen Alam.  Today is Your 20th Birthday" -->
+
+  <script>
+    var username = prompt("Type your name","Zaib Ali");
+    var dob_date = prompt("Type your DOB (Date)", "30");
+    var dob_month = prompt("Type your DOB (Month)","11");
+    var dob_year = prompt("Type your DOB (Year)","1992");
+
+    var today = new Date();
+    var currentHrs = today.getHours();
+
+    var dobDate = new Date(dob_date, dob_month - 1, dob_year)
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Karachi' };
+
+    var dobFormatted = dobDate.toLocaleDateString(undefined, options);
+
+
+    // Print Morning, Afternoon or Evening message
+    if(currentHrs < 12){
+    console.log("Hello "+ username + ", Good Morning" )
+    }
+    else if (currentHrs < 18){
+      console.log("Hello "+ username + ",Good Afternoon")
+    }
+    else {
+      console.log("Hello "+ username + ",Good Evening")
+    }
+
+    // Print Dob in Pakistan standard time
+    console.log("Your DOB in Pakistan Standard Time is " + dobFormatted);
+
+
+    // Calculate Age
+    var diffDate = new Date();
+    
+    var crntDate = diffDate.getDate();
+    var crntMonth = diffDate.getMonth();
+    var crntYear = diffDate.getFullYear();
+    var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    if (dob_date > crntDate) {
+      crntDate = crntDate + month[crntMonth - 1]
+      crntMonth = crntMonth - 1
+    }
+
+    if (dob_month > crntMonth) {
+      crntMonth = crntMonth + 12;
+      crntYear = crntYear - 1;
+    }
+
+    var d = crntDate - dob_date;
+    var m = crntMonth - dob_month;
+    var y = crntYear - dob_year;
+
+    console.log("Your age is " + y + " years "+ m + " Months " + d + " Days.")
+
+    // Age in Days
+    console.log("Your age in days is " + (y * 365 + m * 30 + d) + " days.")
+
+
+    // Calculate time for next birthday
+    var next_birthday = new Date(crntYear + 1, dob_month - 1, dob_date);
+    var timeDiff = next_birthday.getTime() - diffDate.getTime();
+    var daysToNextBirthday = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    console.log("There are " + daysToNextBirthday + " days until your next birthday.");
+  </script>
+
+</body>
+</html>
