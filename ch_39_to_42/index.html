@@ -15,6 +15,45 @@
         Calculate the grade use switch case  Grade A+ 90% to 100% , Grade A 75% to 89% , Grade B 60% to 74% , Grade C 45% to 60% , Grade D 30% to 44% Grade F 0% to 29%
         print output in alert. 
   -->
+  
+  <script>
+    var maths = prompt("Enter obtained marks in maths.") 
+    var english = prompt("Enter obtained marks in english.") 
+    var science = prompt("Enter obtained marks in science.") 
+    var urdu = prompt("Enter obtained marks in urdu.") 
+    var phsycology= prompt("Enter obtained marks in phsycology.")
+    
+    maths = parseInt(maths)
+    english = parseInt(english)
+    science = parseInt(science)
+    urdu = parseInt(urdu)
+    phsycology = parseInt(phsycology)
 
+    var percentage = ((maths + english + science + urdu + phsycology) * 100) / 500;
+    alert(percentage)
+    var grade = "";
+    switch(true) {
+      case percentage >= 90:
+        grade = "A+"
+        break;
+      case percentage >=75:
+        grade = "A"
+        break;
+      case percentage >= 60:
+        grade = "B"
+        break;
+      case percentage >= 45:
+        grade = "C"
+        break;
+      case percentage >= 30:
+        grade = "D"
+        break;  
+      default:
+        grade = "F"
+        break;
+    }
+
+    alert(grade);
+  </script>
 </body>
 </html>
